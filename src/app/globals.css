@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--glass-bg: rgba(255, 255, 255, 0.55);
+	--glass-border: rgba(255, 255, 255, 0.18);
+	--muted-text: rgba(31, 41, 55, 0.8);
+}
+
+html, body, #__next {
+	height: 100%;
+}
+
+body {
+	background-image: radial-gradient(circle at 10% 10%, rgba(99,102,241,0.06), transparent 8%),
+										radial-gradient(circle at 90% 90%, rgba(99,102,241,0.04), transparent 10%);
+}
+
+/* small utility for glass panels where Tailwind classes are not expressive enough */
+.glass {
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	backdrop-filter: blur(8px) saturate(1.05);
+}
+
+.muted-text { color: var(--muted-text); }

@@ -32,7 +32,7 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
   ]
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+    <div className="glass rounded-2xl shadow-lg p-6 md:p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Search Type Selection */}
         <div>
@@ -48,7 +48,7 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
                 className={`p-3 rounded-lg text-sm font-medium transition-colors ${
                   searchType === type.value
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-white/20 text-gray-700 hover:bg-white/30'
                 }`}
               >
                 {type.label}
@@ -69,7 +69,7 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={`Enter ${searchType === 'general' ? 'any search term' : searchType}...`}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-lg"
+              className="w-full px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none text-lg bg-white/30"
               disabled={loading}
             />
           </div>
@@ -84,7 +84,7 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
             id="limit"
             value={limit}
             onChange={(e) => setLimit(Number(e.target.value))}
-            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+            className="px-3 py-2 border border-transparent rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none bg-white/20"
             disabled={loading}
           >
             <option value={10}>10</option>
@@ -105,7 +105,7 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
       </form>
 
       {/* Search Tips */}
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+      <div className="mt-6 p-4 bg-white/20 rounded-lg border border-white/10">
         <h3 className="font-medium text-blue-900 mb-2">💡 Search Tips:</h3>
         <ul className="text-sm text-blue-800 space-y-1">
           <li>• <strong>Title:</strong> Search for specific book titles</li>

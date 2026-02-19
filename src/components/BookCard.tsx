@@ -20,9 +20,9 @@ export default function BookCard({ book }: BookCardProps) {
   }
 
   return (
-    <article className="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl">
+    <article className="overflow-hidden transition-shadow duration-300 glass shadow-lg rounded-xl hover:shadow-xl">
       {/* Book Cover */}
-      <div className="relative flex items-center justify-center h-64 bg-gray-100">
+      <div className="relative flex items-center justify-center h-64 bg-white/10">
         {book.coverImageId ? (
           <img
             src={getCoverImageUrl(book.coverImageId) || undefined}
@@ -51,7 +51,7 @@ export default function BookCard({ book }: BookCardProps) {
         </h3>
         
         {book.authors.length > 0 && (
-          <p className="mb-2 text-sm text-gray-600">
+          <p className="mb-2 text-sm muted-text">
             <span className="font-medium">Author(s):</span>{' '}
             {book.authors.slice(0, 2).join(', ')}
             {book.authors.length > 2 && ` (+${book.authors.length - 2} more)`}
@@ -78,7 +78,7 @@ export default function BookCard({ book }: BookCardProps) {
                 <span
                   key={index}
                   role="listitem"
-                  className="px-2 py-1 text-xs text-blue-800 bg-blue-100 rounded-full"
+                  className="px-2 py-1 text-xs text-blue-800 bg-blue-100/60 rounded-full"
                 >
                   {subject}
                 </span>
@@ -86,7 +86,7 @@ export default function BookCard({ book }: BookCardProps) {
               {book.subjects.length > 3 && (
                 <span 
                   role="listitem"
-                  className="px-2 py-1 text-xs text-gray-600 bg-gray-100 rounded-full"
+                  className="px-2 py-1 text-xs muted-text bg-gray-100/50 rounded-full"
                 >
                   +{book.subjects.length - 3} more
                 </span>
