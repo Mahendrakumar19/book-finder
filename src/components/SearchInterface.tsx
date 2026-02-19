@@ -84,7 +84,7 @@ export default function SearchInterface() {
       {loading && <LoadingSpinner />}
       
       {error && (
-        <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded-lg">
+        <div className="mt-8 p-4 glass border border-red-200/30 rounded-lg">
           <p className="text-red-700">
             <strong>Error:</strong> {error}
           </p>
@@ -92,8 +92,8 @@ export default function SearchInterface() {
       )}
       
       {hasSearched && !loading && !error && books.length === 0 && (
-        <div className="mt-8 p-8 text-center bg-gray-50 rounded-lg">
-          <p className="text-gray-600 text-lg">
+        <div className="mt-8 p-8 text-center glass rounded-lg">
+          <p className="muted-text text-lg">
             No books found. Try adjusting your search terms or search type.
           </p>
         </div>
